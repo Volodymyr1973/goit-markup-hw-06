@@ -474,10 +474,21 @@
             ></textarea>
           </div>
           <div class="modal-form-box">
-            <span class="modal-form-checkbox"></span>
-            <input class="visually-hidden" type="checkbox" name="box" id="box-form" />
-            <label for="box-form" class="form-box-text">Соглашаюсь с рассылкой и принимаю&nbsp;</label>
-            <a class="form-link link" href=""><span class="form-link-text">Условия договора</span></a>
+            <label for="box-form" class="form-box-text">
+              <input class="visually-hidden form-checkbox" type="checkbox" name="box" id="box-form" />
+              <span class="modal-form-checkbox">
+                <svg class="form-check-icon" width="16" height="15">
+                  <use href="./images/icons.svg#icon-icon-check"></use>
+                </svg>
+              </span>
+              <span class="modal-form-nocheckbox">
+                <svg class="form-nocheck-icon" width="16" height="15">
+                  <use href="./images/icons.svg#icon-icon-nocheck"></use>
+                </svg>
+              </span>
+              Соглашаюсь с рассылкой и принимаю&nbsp;
+              <a class="form-link link" href=""><span class="form-link-text">Условия договора</span></a>
+            </label>
           </div>
           <button class="btn-modal-submit" type="submit" value="Отправить">Отправить</button>
         </form>
