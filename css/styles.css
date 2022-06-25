@@ -661,6 +661,8 @@ img {
   border: none;
   border-radius: 4px;
 
+  cursor: pointer;
+
   outline: none;
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -844,6 +846,8 @@ input:focus + .modal-form-icon {
 }
 
 .form-box-text {
+  position: relative;
+  padding-left: 23px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -852,35 +856,74 @@ input:focus + .modal-form-icon {
   line-height: 1.71;
   letter-spacing: 0.03em;
 
+  cursor: pointer;
+
   color: #757575;
 }
 
 .modal-form-checkbox {
-  display: none;
-  /* display: inline-flex;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  opacity: 0;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* display: none; */
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-right: 7px; */
+  /* margin-right: 7px; */
 }
 
 .modal-form-nocheckbox {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  opacity: 1;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-right: 7px;
+  /* margin-right: 7px; */
   border: none;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-checkbox:checked ~ .modal-form-nocheckbox {
-  display: none;
+  /* display: none; */
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.form-checkbox:focus ~ .modal-form-nocheckbox {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .form-checkbox:checked ~ .modal-form-checkbox {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  opacity: 1;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-right: 7px;
+  /* margin-right: 7px; */
   border: none;
+}
+
+.form-checkbox:focus ~ .modal-form-checkbox {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .form-link-text {
@@ -888,8 +931,16 @@ input:focus + .modal-form-icon {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
-  text-decoration-line: underline;
+  text-decoration: underline;
   color: #2196f3;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), text-decoration 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-link-text:hover,
+.form-link-text:focus {
+  text-decoration: none;
+  color: #188ce8;
 }
 
 /*----- Кнопка отправки данных формы -----*/
@@ -911,6 +962,8 @@ input:focus + .modal-form-icon {
   border: none;
   color: #ffffff;
   background-color: #2196f3;
+
+  cursor: pointer;
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
